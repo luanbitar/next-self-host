@@ -1,13 +1,13 @@
-import type { NextConfig } from 'next';
+import type { NextConfig } from "next";
 // import path from 'path';
 
 const nextConfig: NextConfig = {
   // Recommended: this will reduce output
   // Docker image size by 80%+
-  output: 'standalone',
+  output: "standalone",
   // Optional: bring your own cache handler
-  // cacheHandler: path.resolve('./cache-handler.mjs'),
-  // cacheMaxMemorySize: 0, // Disable default in-memory caching
+  cacheHandler: path.resolve("./cache-handler.mjs"),
+  cacheMaxMemorySize: 0, // Disable default in-memory caching
   images: {
     // Optional: use a different optimization service
     // loader: 'custom',
@@ -17,11 +17,11 @@ const nextConfig: NextConfig = {
     // Sharp, which is built-into `next start`
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-        port: '',
-        pathname: '/**',
-        search: '',
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        port: "",
+        pathname: "/**",
+        search: "",
       },
     ],
   },
